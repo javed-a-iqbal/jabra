@@ -1,0 +1,19 @@
+@(form: Form[models.Person])(implicit messages: Messages)
+
+@main("Welcome to Play") {
+
+        <div class="row">
+                <h1>Tax credit Submission</h1>
+        </div>
+     <div class="row">
+
+      @helper.form(action = routes.HomeController.submit, 'enctype -> "multipart/form-data") {
+        @helper.inputText(form("firstName"),'_label -> "Enter your first name")
+        @helper.inputText(form("lastName"),'_label -> "Enter your last name")
+        @helper.inputText(form("age"), '_label -> "Enter your age")
+        <input class="btn btn-primary btn-lg" type="submit" value="Submit"/>
+
+        }
+
+       </div>
+}
